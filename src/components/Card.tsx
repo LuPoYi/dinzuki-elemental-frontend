@@ -1,5 +1,5 @@
-import { OPENSEA_URL } from "@/constants"
-import { useAccount } from "wagmi"
+import { OPENSEA_URL } from '@/constants';
+import { useAccount } from 'wagmi';
 
 interface CardProps {
   tokenId: number
@@ -26,7 +26,7 @@ export function Card({
   const isOwner = owner === address
 
   return (
-    <div className="card w-72 bg-base-100 shadow-xl">
+    <div className="card w-full sm:w-72 bg-base-100 shadow-xl">
       <a
         href={`${OPENSEA_URL}/${tokenId}`}
         rel="noopener noreferrer"

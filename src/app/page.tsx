@@ -1,13 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ConnectButton } from "@rainbow-me/rainbowkit"
-import { Card } from "@/components/Card"
+
 import { CONTRACT_ADDRESS } from "@/constants"
+import { Card } from "@/components/Card"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 import dinzukiElementalABI from "@/contracts/dinzuki-elemental-abi.json"
-import { useAccount, useContractWrite, useWaitForTransaction } from "wagmi"
 import { readContracts } from "wagmi/actions"
 import toast, { Toaster } from "react-hot-toast"
+import { useAccount, useContractWrite, useWaitForTransaction } from "wagmi"
 
 interface TokenData {
   tokenId: number
@@ -142,7 +143,7 @@ export default function Home() {
       ].map(({ key, text }) => (
         <div key={key} className="">
           <h2 className="text-xl">{text}</h2>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-col sm:flex-row">
             {tokenMaps[key]
               .sort((a, b) => a.tokenId - b.tokenId)
               .map(
